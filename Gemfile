@@ -35,6 +35,7 @@ group :development, :test do
   gem 'byebug', platform: :mri
 
   # ↓ Add gems below this line.
+  gem 'factory_girl_rails'
   gem 'rspec-rails', '~> 3.5.0.beta1'
 end
 
