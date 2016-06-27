@@ -3,3 +3,4 @@
 source "https://rubygems.org"
 
 # gem "rails"
+gem 'rails', '>= 5.0.0.beta1', '< 5.1'
