@@ -12,21 +12,12 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :detail %>
     <%= f.text_area :detail %>
   </div>
 
-  <div class="field">
-    <%= f.label :worry_id %>
-    <%= f.text_field :worry_id %>
-  </div>
-
-  <div class="field">
-    <%= f.label :in_reply_to_id %>
-    <%= f.text_field :in_reply_to_id %>
-  </div>
-
   <div class="actions">
+    <%= f.hidden_field :worry_id %>
+    <%= f.hidden_field :in_reply_to_id %>
     <%= f.submit %>
   </div>
 <% end %>
