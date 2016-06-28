@@ -8,6 +8,8 @@ class Advice < ApplicationRecord
 
   after_save :call_worry_after_save
 
+  validates :detail, presence: true, length: { in: 1..35 }
+
   private
 
   def call_worry_after_save

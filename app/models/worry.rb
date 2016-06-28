@@ -7,6 +7,8 @@ class Worry < ApplicationRecord
 
   after_save :close_if_has_many_advices
 
+  validates :detail, presence: true, length: { in: 1..35 }
+
   private
 
   def close_if_has_many_advices
