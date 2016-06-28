@@ -11,7 +11,7 @@ class Reply
   def build_message
     case @item
     when Worry
-      Message.new
+      Message.new(nil)
     when Advice
       Message.new(@item.in_reply_to ? @item.in_reply_to : @item.worry)
     end

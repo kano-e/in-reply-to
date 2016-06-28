@@ -15,12 +15,14 @@ class WorriesController < ApplicationController
   # GET /worries/new
   def new
     @worry = Worry.new
+    @reply = Reply.new(@worry)
   end
 
   # POST /worries
   # POST /worries.json
   def create
     @worry = Worry.new(worry_params)
+    @reply = Reply.new(@worry)
 
     respond_to do |format|
       if @worry.save
