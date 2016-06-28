@@ -28,7 +28,7 @@ class AdvicesController < ApplicationController
 
     respond_to do |format|
       if @advice.save
-        format.html { redirect_to @advice, notice: 'Advice was successfully created.' }
+        format.html { redirect_to root_path, notice: 'Advice was successfully created.' }
         format.json { render :show, status: :created, location: @advice }
       else
         format.html { render :new }

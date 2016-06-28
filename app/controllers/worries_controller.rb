@@ -28,7 +28,7 @@ class WorriesController < ApplicationController
 
     respond_to do |format|
       if @worry.save
-        format.html { redirect_to @worry, notice: 'Worry was successfully created.' }
+        format.html { redirect_to root_path, notice: 'Worry was successfully created.' }
         format.json { render :show, status: :created, location: @worry }
       else
         format.html { render :new }
