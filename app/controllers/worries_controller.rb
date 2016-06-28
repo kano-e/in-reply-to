@@ -1,4 +1,6 @@
 class WorriesController < ApplicationController
+  include WorriesHelper
+
   before_action :set_worry, only: [:show]
 
   # GET /worries
@@ -38,7 +40,8 @@ class WorriesController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_worry
-      @worry = Worry.find(params[:id])
+      @worry = Worry.includes(:advices).find(params[:id])
+      @sorted_advices = sort_advices(@worry)
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

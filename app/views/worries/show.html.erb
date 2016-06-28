@@ -1,9 +1,11 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Detail:</strong>
-  <%= @worry.detail %>
-</p>
+<h1><%= @worry.detail %></h1>
 
-<%= link_to 'Edit', edit_worry_path(@worry) %> |
+<ul>
+<% @sorted_advices[nil].each do |advice| %>
+<%= render 'advice', advice: advice %>
+<% end %>
+</ul>
+
 <%= link_to 'Back', worries_path %>
