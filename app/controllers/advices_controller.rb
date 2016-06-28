@@ -1,13 +1,15 @@
 class AdvicesController < ApplicationController
   # GET /advices/new
   def new
-    @advice = Advice.new
+    @advice = Advice.new(advice_params)
+    @reply = Reply.new(@advice)
   end
 
   # POST /advices
   # POST /advices.json
   def create
     @advice = Advice.new(advice_params)
+    @reply = Reply.new(@advice)
 
     respond_to do |format|
       if @advice.save
