@@ -1,0 +1,21 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Worries</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Detail</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @worries.each do |worry| %>
+      <tr>
+        <td><%= link_to worry.detail, worry %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to 'Top', root_path %>

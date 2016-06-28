@@ -10,9 +10,30 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 0) do
+ActiveRecord::Schema.define(version: 20160628114702) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+  create_table "advices", force: :cascade do |t|
+    t.text     "detail"
+    t.integer  "worry_id"
+    t.integer  "in_reply_to_id"
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
+    t.integer  "replies_count",  default: 0
+    t.datetime "closed_at"
+    t.index ["in_reply_to_id"], name: "index_advices_on_in_reply_to_id", using: :btree
+    t.index ["worry_id"], name: "index_advices_on_worry_id", using: :btree
+  end
+
+  create_table "worries", force: :cascade do |t|
+    t.text     "detail"
+    t.datetime "created_at",                null: false
+    t.datetime "updated_at",                null: false
+    t.integer  "advices_count", default: 0
+    t.datetime "closed_at"
+  end
+
+  add_foreign_key "advices", "worries"
 end

@@ -1,0 +1,10 @@
+<li>
+<span><%= advice.detail %></span>
+<% if @sorted_advices[advice.id].present? %>
+<ul>
+<% @sorted_advices[advice.id].each do |reply| %>
+<%= render 'advice', advice: reply %>
+<% end %>
+</ul>
+<% end %>
+</li>

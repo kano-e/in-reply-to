@@ -1,0 +1,23 @@
+<%= form_for(advice) do |f| %>
+  <% if advice.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(advice.errors.count, "error") %> prohibited this advice from being saved:</h2>
+
+      <ul>
+      <% advice.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.text_area :detail %>
+  </div>
+
+  <div class="actions">
+    <%= f.hidden_field :worry_id %>
+    <%= f.hidden_field :in_reply_to_id %>
+    <%= f.submit %>
+  </div>
+<% end %>
