@@ -2,6 +2,7 @@ class Worry < ApplicationRecord
   has_many :advices
 
   scope :has_no_advices, -> { where(advices_count: 0) }
+  scope :open, -> { where(closed_at: nil) }
 
   after_save :close_if_has_many_advices
 
