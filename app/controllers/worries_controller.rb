@@ -4,7 +4,7 @@ class WorriesController < ApplicationController
   # GET /worries
   # GET /worries.json
   def index
-    @worries = Worry.all
+    @worries = Worry.closed.all
   end
 
   # GET /worries/1
