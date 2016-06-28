@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Detail:</strong>
+  <%= @advice.detail %>
+</p>
+
+<p>
+  <strong>Worry:</strong>
+  <%= @advice.worry %>
+</p>
+
+<p>
+  <strong>In reply to:</strong>
+  <%= @advice.in_reply_to %>
+</p>
+
+<%= link_to 'Edit', edit_advice_path(@advice) %> |
+<%= link_to 'Back', advices_path %>
