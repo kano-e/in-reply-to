@@ -4,7 +4,7 @@ class Message
   end
 
   def detail
-    @item ? @item.detail : 'What is worrying you?'
+    @item ? @item.detail : I18n.t('what_is_worring_you')
   end
 
   def reply
