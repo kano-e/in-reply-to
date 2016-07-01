@@ -1,12 +1,12 @@
 class MessageController < ApplicationController
   def show
-    item = nil
+    items = [nil, nil]
 
-    if Worry.open.count > 5
-      item = Worry.open.has_no_advices.order('RANDOM()').take
-      item ||= Advice.open.has_no_replies.order('RANDOM()').take
+    if Worry.open.count >= 3
+      items += Worry.open.has_no_advices.order('RANDOM()').limit(3).to_a
+      items += Advice.open.has_no_replies.order('RANDOM()').limit(5).to_a
     end
 
-    @message = Message.new(item)
+    @message = Message.new(items.shuffle.first)
   end
 end
