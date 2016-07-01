@@ -1,11 +1,11 @@
 ja:
   activerecord:
     models:
-      worry: '悩み事'
-      advice: 'アドバイス'
+      worry: 'なやみ'
+      advice: 'へんしん'
     attributes:
       worry:
-        detail: '悩み事'
+        detail: 'なやみ'
       advice:
-        detail: 'アドバイス'
+        detail: 'へんしん'
 
