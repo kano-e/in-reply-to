@@ -5,22 +5,21 @@
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   </head>
 
   <body>
     <nav class="blue-grey" role="navigation">
-      <div class="nav-wrapper container"><a id="logo-container" href="<%= root_path %>" class="brand-logo">in-reply-to</a>
-      <ul class="right hide-on-med-and-down">
-        <li><%= link_to t('Past Worries'), worries_path %></li>
-      </ul>
+      <div class="nav-wrapper container"><%= link_to 'in-reply-to', root_path, id: 'logo-container', class: 'brand-logo' %>
+        <ul class="right hide-on-med-and-down">
+          <li><%= link_to t('Past Worries'), worries_path %></li>
+        </ul>
 
-      <ul id="nav-mobile" class="side-nav">
-        <li><%= link_to t('Past Worries'), worries_path %></li>
-        <li><%= link_to t('About in-reply-to'), 'https://github.com/kano-e/in-reply-to/blob/master/README.md' %></li>
-      </ul>
-      <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
+        <ul id="nav-mobile" class="side-nav">
+          <li><%= link_to t('Past Worries'), worries_path %></li>
+        </ul>
+        <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
+      </div>
     </nav>
 
     <div class="section no-pad-bot" id="index-banner">
@@ -46,5 +45,6 @@
         </div>
       </div>
     </footer>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </body>
 </html>
