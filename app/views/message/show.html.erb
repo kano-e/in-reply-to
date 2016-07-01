@@ -1,11 +1,3 @@
-<p id="notice"><%= notice %></p>
-
-<h1><%= @message.detail %></h1>
+<p class="flow-text blue-grey-text text-darken-4"><%= @message.detail %></p>
 
 <%= render @message.reply %>
-
-<%= link_to t('Past Worries'), worries_path %>
-
-<hr>
-
-<%= link_to t('About in-reply-to'), 'https://github.com/kano-e/in-reply-to/blob/master/README.md' %>

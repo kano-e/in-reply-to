@@ -1,0 +1,11 @@
+ja:
+  activerecord:
+    models:
+      worry: 'なやみ'
+      advice: 'へんしん'
+    attributes:
+      worry:
+        detail: 'なやみ'
+      advice:
+        detail: 'へんしん'
+

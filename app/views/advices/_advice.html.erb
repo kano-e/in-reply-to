@@ -1,23 +1,30 @@
 <%= form_for(advice) do |f| %>
   <% if advice.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(advice.errors.count, "error") %> prohibited this advice from being saved:</h2>
-
+  <div class="card red lighten-4">
+    <div class="card-content red-text text-darken-4">
       <ul>
-      <% advice.errors.full_messages.each do |message| %>
+        <% advice.errors.full_messages.each do |message| %>
         <li><%= message %></li>
-      <% end %>
+        <% end %>
       </ul>
     </div>
+  </div>
   <% end %>
 
-  <div class="field">
-    <%= f.text_area :detail %>
+  <div class="row">
+    <div class="input-field col m6 offset-m3">
+      <i class="material-icons prefix">mode_edit</i>
+      <%= f.label :detail %>
+      <%= f.text_area :detail, class: 'materialize-textarea', length: 35 %>
+    </div>
   </div>
 
-  <div class="actions">
-    <%= f.hidden_field :worry_id %>
-    <%= f.hidden_field :in_reply_to_id %>
-    <%= f.submit t('Reply') %>
+
+  <div class="row">
+    <div class="center">
+      <%= f.hidden_field :worry_id %>
+      <%= f.hidden_field :in_reply_to_id %>
+      <button class="btn waves-effect waves-light" type="submit" name="action"><%=t 'Post' %></button>
+    </div>
   </div>
 <% end %>
