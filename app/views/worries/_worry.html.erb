@@ -1,21 +1,27 @@
 <%= form_for(worry) do |f| %>
   <% if worry.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(worry.errors.count, "error") %> prohibited this worry from being saved:</h2>
-
+  <div class="card red lighten-4">
+    <div class="card-content red-text text-darken-4">
       <ul>
-      <% worry.errors.full_messages.each do |message| %>
+        <% worry.errors.full_messages.each do |message| %>
         <li><%= message %></li>
-      <% end %>
+        <% end %>
       </ul>
     </div>
+  </div>
   <% end %>
 
-  <div class="field">
-    <%= f.text_area :detail %>
+  <div class="row">
+    <div class="input-field col m6 offset-m3">
+      <%= f.label :detail %>
+      <%= f.text_area :detail, class: 'materialize-textarea' %>
+    </div>
   </div>
 
-  <div class="actions">
-    <%= f.submit t('Post') %>
+
+  <div class="row">
+    <div class="center">
+      <button class="btn waves-effect waves-light" type="submit" name="action"><%=t 'Post' %></button>
+    </div>
   </div>
 <% end %>

@@ -9,6 +9,41 @@
   </head>
 
   <body>
-    <%= yield %>
+    <nav class="blue-grey" role="navigation">
+      <div class="nav-wrapper container"><a id="logo-container" href="<%= root_path %>" class="brand-logo">in-reply-to</a>
+      <ul class="right hide-on-med-and-down">
+        <li><%= link_to t('Past Worries'), worries_path %></li>
+      </ul>
+
+      <ul id="nav-mobile" class="side-nav">
+        <li><%= link_to t('Past Worries'), worries_path %></li>
+        <li><%= link_to t('About in-reply-to'), 'https://github.com/kano-e/in-reply-to/blob/master/README.md' %></li>
+      </ul>
+      <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
+    </nav>
+
+    <div class="section no-pad-bot" id="index-banner">
+      <div class="container">
+        <div class="row center">
+          <%= notice %>
+        </div>
+      </div>
+
+      <div class="container">
+        <div class="card-panel">
+          <%= yield %>
+        </div>
+      </div>
+    </div>
+
+    <footer class="page-footer transparent">
+      <div class="container">
+        <div class="row center">
+          <ul>
+            <li><%= link_to t('About in-reply-to'), 'https://github.com/kano-e/in-reply-to/blob/master/README.md' %></li>
+          </ul>
+        </div>
+      </div>
+    </footer>
   </body>
 </html>
