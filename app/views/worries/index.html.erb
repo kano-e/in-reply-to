@@ -1,19 +1,7 @@
-<h1><%=t 'Past Worries' %></h1>
+<p class="blue-grey-text text-darken-4"><%=t 'Past Worries' %></p>
 
-<table>
-  <thead>
-    <tr>
-      <th>Detail</th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @worries.each do |worry| %>
-      <tr>
-        <td><%= link_to worry.detail, worry %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<%= link_to 'Top', root_path %>
+<div class="collection">
+  <% @worries.each do |worry| %>
+  <%= link_to worry.detail, worry, class: 'collection-item' %>
+  <% end %>
+</div>
