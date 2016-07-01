@@ -1,7 +1,15 @@
 <p class="blue-grey-text text-darken-4"><%=t 'Past Worries' %></p>
 
+<% if @worries.blank? %>
+<div>
+  <span class="red-text text-lighten-2"><%=t 'Not found.' %></span>
+</div>
+<% end %>
+
+<% if @worries.present? %>
 <div class="collection">
   <% @worries.each do |worry| %>
   <%= link_to worry.detail, worry, class: 'collection-item' %>
   <% end %>
 </div>
+<% end %>
