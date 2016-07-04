@@ -6,6 +6,7 @@ class CreateAccounts < ActiveRecord::Migration[5.0]
       t.json :credentials
 
       t.timestamps
+      t.index [:provider, :uid], name: :idx_accounts_provider_uid, unique: true
     end
   end
 end
