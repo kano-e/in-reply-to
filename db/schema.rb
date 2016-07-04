@@ -21,6 +21,7 @@ ActiveRecord::Schema.define(version: 20160704140737) do
     t.json     "credentials"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+    t.index ["provider", "uid"], name: "idx_accounts_provider_uid", unique: true, using: :btree
   end
 
   create_table "advices", force: :cascade do |t|
