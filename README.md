@@ -2,7 +2,7 @@
 
 https://in-reply-to.herokuapp.com/
 
-"リプライでアドバイス" というゲームを Web 上で遊ぶための何かになる予定。
+"リプライでアドバイス" というゲームを Web 上で遊ぶための何かになる予定。  
 inspired by http://gamepoem.blogspot.jp/2015/01/blog-post.html
 
 ## お話
