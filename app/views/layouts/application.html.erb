@@ -22,6 +22,11 @@
 
         <ul id="nav-mobile" class="side-nav">
           <li><%= link_to t('Past Worries'), worries_path %></li>
+          <% if signed_in?(:user) %>
+          <li><%= link_to t('sign_out'), signout_path %></li>
+          <% else %>
+          <li><%= link_to t('sign_in'), '/auth/twitter' %></li>
+          <% end %>
         </ul>
         <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
       </div>
