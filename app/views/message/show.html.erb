@@ -1,3 +1,8 @@
 <p class="flow-text blue-grey-text text-darken-4"><%= @message.detail %></p>
 
+<% if signed_in?(:user) %>
 <%= render @message.reply %>
+<% else %>
+<p>返信するにはログインが必要です。</p>
+<%= link_to t('sign_in'), '/auth/twitter' %>
+<% end %>
