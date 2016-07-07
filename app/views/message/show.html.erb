@@ -3,6 +3,19 @@
 <% if user_signed_in? %>
 <%= render @message.reply %>
 <% else %>
-<p>返信するにはログインが必要です。</p>
-<%= link_to t('sign_in'), '/auth/twitter' %>
+
+<div class="row">
+  <div class="input-field col m6 offset-m3">
+    <i class="material-icons prefix">mode_edit</i>
+    <%= text_area_tag :detail, '返信するにはログインが必要です。', class: 'materialize-textarea', disabled: true %>
+  </div>
+</div>
+
+<div class="row">
+  <div class="center">
+    <%= link_to '/auth/twitter' do %>
+      <button class="btn waves-effect waves-light blue-grey darken-1" type="submit" name="action"><%=t 'sign_in' %></button>
+    <% end %>
+  </div>
+</div>
 <% end %>
