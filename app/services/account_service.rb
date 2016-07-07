@@ -5,6 +5,7 @@ module AccountService
     info = auth_info(auth_hash)
     account = Account.where(provider: info[:provider], uid: info[:uid])
     account.first_or_create do |i|
+      i.user = User.create
       i.credentials = info[:credentials]
     end
   end
