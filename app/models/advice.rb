@@ -11,6 +11,10 @@ class Advice < ApplicationRecord
 
   validates :detail, presence: true, length: { in: 1..35 }
 
+  def self.not_mine(user_id)
+    user_id ? where.not(user_id: user_id) : all
+  end
+
   private
 
   def call_worry_after_save
