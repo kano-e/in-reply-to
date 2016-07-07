@@ -1,6 +1,7 @@
 class SessionsController < ApplicationController
   def create
     account = AccountService.authenticate(env['omniauth.auth'])
-    render json: account.errors
+    sign_in(:user, account.user)
+    redirect_to root_path
   end
 end

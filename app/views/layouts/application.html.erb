@@ -13,6 +13,11 @@
       <div class="nav-wrapper container"><%= link_to 'in-reply-to', root_path, id: 'logo-container', class: 'brand-logo' %>
         <ul class="right hide-on-med-and-down">
           <li><%= link_to t('Past Worries'), worries_path %></li>
+          <% if signed_in?(:user) %>
+          <li>ログアウト</li>
+          <% else %>
+          <li><%= link_to t('Sign-in'), '/auth/twitter' %></li>
+          <% end %>
         </ul>
 
         <ul id="nav-mobile" class="side-nav">
