@@ -31,7 +31,9 @@ gem 'jbuilder', '~> 2.5'
 # gem 'capistrano-rails', group: :development
 
 # ↓ Add gems below this line.
+gem 'devise'
 gem 'materialize-sass'
+gem 'omniauth-twitter', github: 'arunagw/omniauth-twitter'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

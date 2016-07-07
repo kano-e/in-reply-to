@@ -1,4 +1,6 @@
 class Worry < ApplicationRecord
+  belongs_to :user
+
   has_many :advices
 
   scope :has_no_advices, -> { where(advices_count: 0) }
@@ -8,6 +10,10 @@ class Worry < ApplicationRecord
   after_save :close_if_has_many_advices
 
   validates :detail, presence: true, length: { in: 1..35 }
+
+  def self.not_mine(user_id)
+    user_id ? where.not(user_id: user_id) : all
+  end
 
   private
 

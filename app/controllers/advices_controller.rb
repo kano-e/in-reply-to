@@ -1,4 +1,6 @@
 class AdvicesController < ApplicationController
+  before_action :authenticate_user!, only: [:new, :create]
+
   # GET /advices/new
   def new
     @advice = Advice.new(advice_params)
@@ -9,6 +11,7 @@ class AdvicesController < ApplicationController
   # POST /advices.json
   def create
     @advice = Advice.new(advice_params)
+    @advice.user = signed_in_user
     @reply = Reply.new(@advice)
 
     respond_to do |format|
