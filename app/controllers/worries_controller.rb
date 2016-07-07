@@ -1,6 +1,7 @@
 class WorriesController < ApplicationController
   include WorriesHelper
 
+  before_action :authenticate_user!, only: [:new, :create]
   before_action :set_worry, only: [:show]
 
   # GET /worries
@@ -24,6 +25,7 @@ class WorriesController < ApplicationController
   # POST /worries.json
   def create
     @worry = Worry.new(worry_params)
+    @worry.user = signed_in_user
     @reply = Reply.new(@worry)
 
     respond_to do |format|
