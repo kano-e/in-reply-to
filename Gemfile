@@ -31,6 +31,7 @@ gem 'jbuilder', '~> 2.5'
 # gem 'capistrano-rails', group: :development
 
 # ↓ Add gems below this line.
+gem 'devise'
 gem 'materialize-sass'
 gem 'omniauth-twitter', github: 'arunagw/omniauth-twitter'
 
