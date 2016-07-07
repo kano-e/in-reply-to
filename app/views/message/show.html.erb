@@ -1,6 +1,6 @@
 <p class="flow-text blue-grey-text text-darken-4"><%= @message.detail %></p>
 
-<% if signed_in?(:user) %>
+<% if user_signed_in? %>
 <%= render @message.reply %>
 <% else %>
 <p>返信するにはログインが必要です。</p>

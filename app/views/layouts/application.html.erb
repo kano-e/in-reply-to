@@ -22,7 +22,7 @@
 
         <ul id="nav-mobile" class="side-nav">
           <li><%= link_to t('Past Worries'), worries_path %></li>
-          <% if signed_in?(:user) %>
+          <% if user_signed_in? %>
           <li><%= link_to t('sign_out'), signout_path %></li>
           <% else %>
           <li><%= link_to t('sign_in'), '/auth/twitter' %></li>
