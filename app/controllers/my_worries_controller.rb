@@ -1,4 +1,5 @@
 class MyWorriesController < ApplicationController
+  before_action :authenticate_user!
   before_action :set_my_worry, only: [:show, :edit, :update, :destroy]
 
   # GET /my_worries
