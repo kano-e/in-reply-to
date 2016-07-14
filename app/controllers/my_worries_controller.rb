@@ -5,7 +5,7 @@ class MyWorriesController < ApplicationController
   # GET /my_worries
   # GET /my_worries.json
   def index
-    @my_worries = MyWorry.all
+    @my_worries = Worry.mine(signed_in_user.id).all
   end
 
   # GET /my_worries/1

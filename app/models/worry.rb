@@ -11,6 +11,10 @@ class Worry < ApplicationRecord
 
   validates :detail, presence: true, length: { in: 1..35 }
 
+  def self.mine(user_id)
+    user_id ? where(user_id: user_id) : none
+  end
+
   def self.not_mine(user_id)
     user_id ? where.not(user_id: user_id) : all
   end
