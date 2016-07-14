@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<h1>My Worries</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Index</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @my_worries.each do |my_worry| %>
+      <tr>
+        <td><%= my_worry.index %></td>
+        <td><%= link_to 'Show', my_worry %></td>
+        <td><%= link_to 'Edit', edit_my_worry_path(my_worry) %></td>
+        <td><%= link_to 'Destroy', my_worry, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New My Worry', new_my_worry_path %>
