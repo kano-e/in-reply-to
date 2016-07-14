@@ -1,0 +1,22 @@
+<%= form_for(my_worry) do |f| %>
+  <% if my_worry.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(my_worry.errors.count, "error") %> prohibited this my_worry from being saved:</h2>
+
+      <ul>
+      <% my_worry.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :index %>
+    <%= f.text_field :index %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,33 @@
+<p class="blue-grey-text text-darken-4"><%=t('Your Worries') %></p>
+
+<% if @my_worries.blank? %>
+<div>
+  <span class="red-text text-lighten-2"><%=t 'Not found.' %></span>
+</div>
+<% end %>
+
+<% if @my_worries.present? %>
+<table>
+  <thead>
+    <tr>
+      <th><%=t 'worries' %></th>
+      <th><%=t 'advices' %></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @my_worries.each do |worry| %>
+      <tr>
+        <td>
+          <% if worry.closed_at? %>
+          <%= link_to worry.detai, worry %>
+          <% else %>
+          <%= worry.detail %>
+          <% end %>
+        </td>
+        <td><%=t worry.advices_count %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<% end %>

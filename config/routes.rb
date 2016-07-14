@@ -4,6 +4,8 @@ Rails.application.routes.draw do
 
   resources :advices, only: [:new, :create]
   resources :worries, only: [:index, :show, :new, :create]
+  resources :my_worries, path: '/my/worries', only: [:index]
+
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
   root 'message#show'
